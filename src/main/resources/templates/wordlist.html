@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Words for Dictionary</title>
+</head>
+<body>
+<form action="/wordlist/add" method="POST">
+    <label>add new word</label>
+    <label>original</label><input type="text" name="original">
+    <label>translate</label><input type="text" name="translate">
+    <input type="submit" value="add word">
+</form>
+<table>
+    <tr>
+        <th>№</th>
+        <th>original</th>
+        <th>translate</th>
+    </tr>
+    <tr th:each ="word : ${wordsList}">
+        <td><span th:text = "${word.id + 1}"> # </span></td>
+        <td><span th:text = "${word.original}"> name </span></td>
+        <td><span th:text = "${word.translate}"> name </span></td>
+
+    </tr>
+</table>
+</body>
+</html>
