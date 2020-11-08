@@ -1,7 +1,5 @@
 package app.repo;
 
-import app.models.User;
-
 import java.util.List;
 
 public interface RepositoryI<T>{

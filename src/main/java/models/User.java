@@ -1,4 +1,4 @@
-package app.models;
+package models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,6 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")

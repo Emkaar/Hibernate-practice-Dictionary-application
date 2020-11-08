@@ -1,7 +1,6 @@
 package app.service;
 
-import app.models.User;
-import app.models.Word;
+import models.Word;
 
 import java.util.List;
 

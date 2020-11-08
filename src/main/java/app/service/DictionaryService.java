@@ -1,8 +1,7 @@
 package app.service;
 
-import app.models.Dictionary;
-import app.models.User;
-import app.models.Word;
+import models.Dictionary;
+import models.Word;
 
 import java.util.List;
 
@@ -14,8 +13,4 @@ public interface DictionaryService {
     List<Dictionary> getAll();
 
     Dictionary getById(Integer id);
-
-    void addWord(Word word, int id);
-
-    List<Word> getAllWords(int id);
 }

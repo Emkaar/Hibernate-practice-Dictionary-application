@@ -1,24 +1,25 @@
 package app.repo;
 
-import app.models.User;
 import app.util.HibernateUtil;
+import models.User;
+
+import org.graalvm.compiler.lir.LIRInstruction;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-@Repository
-@Transactional
 public class UserRepositoryImpl implements RepositoryI<User> {
 
     SessionFactory sessionFactory;
-
-    public UserRepositoryImpl() {
+    public UserRepositoryImpl(){
         sessionFactory = HibernateUtil.getSessionFactory();
     }
 
@@ -69,8 +70,7 @@ public class UserRepositoryImpl implements RepositoryI<User> {
     @Override
     public User getById(Integer id) {
         Session session = sessionFactory.openSession();
-        User item = (User) session.get(User.class, id);
-        session.close();
-        return item;
+        User user = session.find(User.class, id);
+        return user;
     }
 }
