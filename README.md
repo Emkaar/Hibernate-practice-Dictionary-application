@@ -1,0 +1,2 @@
+# TestApp
+Hibernate & criteria practice
